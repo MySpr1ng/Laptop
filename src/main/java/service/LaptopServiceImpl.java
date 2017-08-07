@@ -19,9 +19,9 @@ public class LaptopServiceImpl implements LaptopService {
     }
 
     public void create(Laptop laptop) {
-     if(laptop !=null){
-         laptop.setId(dao.create(laptop));
-     }
+        if(laptop !=null){
+            laptop.setId(dao.create(laptop));
+        }
     }
 
     public Laptop read(Long id) {
@@ -36,8 +36,7 @@ public class LaptopServiceImpl implements LaptopService {
         return true;
     }
 
-    public boolean delete(Laptop laptopDelete)
-    {
+    public boolean delete(Laptop laptopDelete) {
         dao.delete(laptopDelete);
         return true;
     }

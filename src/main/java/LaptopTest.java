@@ -4,6 +4,7 @@ import service.LaptopService;
 import service.LaptopServiceImpl;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 
@@ -16,7 +17,10 @@ public class LaptopTest  {
 
         SimpleDateFormat fm = new SimpleDateFormat("dd.MM.yyyy");
         LaptopService service = new LaptopServiceImpl();
-        service.deleteById(2l);
-        Util.getFactory().close();
+        Laptop laptop = new Laptop("ff","ff","ff",new Date(),111.11);
+        laptop.setVendor("gs");
+        laptop.setModel("gs");
+        laptop.setPrice(23.22);
+        service.update(laptop);
     }
 }

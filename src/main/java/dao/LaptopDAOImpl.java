@@ -43,12 +43,13 @@ public class LaptopDAOImpl implements LaptopDAO {
         Session session = factory.openSession();
         try {
             session.beginTransaction();
-            Query query = session.createQuery("update Laptop set serial =:serial, vendor = :vendor, manufactureDate =:manufactureDate, price =:price");
+            Query query = session.createQuery("update Laptop set id = :id, serial =:serial, model =:model, vendor = :vendor, manufactureDate =:manufactureDate, price =:price");
             query.setParameter("serial", laptopUpdate.getSerial());
-            query.setParameter("vendor",laptopUpdate.getVendor());
+            query.setParameter("vendor", laptopUpdate.getVendor());
+            query.setParameter("model", laptopUpdate.getModel());
             query.setParameter("manufactureDate", laptopUpdate.getManufactureDate());
-            query.setParameter("price",laptopUpdate.getPrice());
-
+            query.setParameter("price", laptopUpdate.getPrice());
+            query.setParameter("id", laptopUpdate.getId());
             query.executeUpdate();
             session.getTransaction().commit();
             return true;

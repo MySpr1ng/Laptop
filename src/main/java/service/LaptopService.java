@@ -18,6 +18,8 @@ public interface LaptopService {
 
     boolean delete(Laptop laptopDelete);
 
+    void deleteById(Long id);
+
     List<Laptop> findAll();
 
     List<Laptop> showByModel(String model);
@@ -28,5 +30,5 @@ public interface LaptopService {
 
     List<Laptop> showBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date manufactureDate, String vendor);
 
-    void deleteById(Long id);
+
 }
